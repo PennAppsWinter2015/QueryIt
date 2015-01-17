@@ -1,17 +1,19 @@
 var api = {}
 
-api.currentNews = {
-	phrases: ['coolest products', 'todays tech'],
-	call_api: function() {
-		console.log('fetching...')
-	}
-}
+var request = require('request');
+var keys = require('../keys.js');
 
 api.breakingNews = {
-	phrases: ['best apps of the year', 'coolest websites of the year'],
-	call_api: function() {
-		console.log('fetching top product hunts of the year')
-	}
+  phrases: ['breaking news', 'current news', 'news', 'todays news'],
+  call_api: function(raw_text, callback) {
+    request('http://api.usatoday.com/open/breaking?expired=true&api_key=' + keys.USATODAY_BREAKING_NEWS_KEY, function (error, response, body) {
+      if (!error && response.statusCode == 200) {
+        callback(body)
+      } else {
+        callback(error)
+      }
+    })
+  }
 }
 
 module.exports = api;

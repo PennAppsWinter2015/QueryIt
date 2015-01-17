@@ -10,6 +10,7 @@ var express = require('express')
   , bodyParser = require('body-parser')
   , favicon = require('serve-favicon')
   , logger = require('morgan')
+  , fs = require('fs')
   , methodOverride = require('method-override');
 
 var app = express();
@@ -29,6 +30,22 @@ if (app.get('env') == 'development') {
 }
 
 app.get('/', routes.index);
+
+fs.readdir("apis", function(err, files) {
+	if (err != null) throw err;
+	for (var i =0; i<files.length; i++) {
+		var api = files[i]
+		var api_object = require("./apis/" + api);
+
+		console.log('\n\napi name: ' + api)
+		for (var key in api_object) {
+			console.log('\napi method: ', key)
+			console.log('api phrases: ', api_object[key].phrases)
+			api_object[key].call_api()
+		}
+	}
+})
+
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

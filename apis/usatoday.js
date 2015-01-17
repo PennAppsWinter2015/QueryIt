@@ -6,7 +6,7 @@ var keys = require('../keys.js');
 api.topNews = {
   phrases: ['breaking news', 'todays news','current news', 'news', 'todays news'],
   call_api: function(raw_text, callback) {
-    request('http://api.usatoday.com/open/articles/topnews?api_key=' + keys.USATODAY_ARTICLES_KEY, function (error, response, body) {
+    request('http://api.usatoday.com/open/articles/topnews?encoding=JSON?api_key=' + keys.USATODAY_ARTICLES_KEY, function (error, response, body) {
       if (!error && response.statusCode == 200) {
         callback(body)
       } else {

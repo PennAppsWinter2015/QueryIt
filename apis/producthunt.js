@@ -3,7 +3,7 @@ var api = {}
 api.todaysProducts = {
 	phrases: ['coolest products', 'todays tech'],
 	call_api: function() {
-		console.log('fetching producthunt products of today')
+		console.log('fetching...')
 	}
 }
 

@@ -11,7 +11,7 @@ Youtube.authenticate({
 
 api.top_videos = {
 	phrases: ['popular videos', 'popular youtube videos'],
-	call_api: function(callback) {
+	call_api: function(rawSearchText, callback) {
 		Youtube.search.list({
 		    "part": "id, snippet"
 		  , "maxResults": 5
@@ -19,7 +19,6 @@ api.top_videos = {
 		  , "type": "video"
 		}, function (err, data) {
 		    if (err != null) console.log("error", err)
-		    console.log(data)
 		    callback(data)
 		});
 	}

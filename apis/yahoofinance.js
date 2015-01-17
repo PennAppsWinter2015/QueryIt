@@ -29,7 +29,7 @@ var FIELDS = _.flatten([
 
 var symbolMatch = /(?:^| )([A-Z]+?)(?:$| )/gm;
 
-api.getPrice = {
+api.getQuote = {
 	phrases: ['get quote', 'stock', 'stock price', 'price of', 'what is trading at'],
 	call_api: function(rawText, callback) {
 		console.log('grabbing stock price');
@@ -43,6 +43,7 @@ api.getPrice = {
 				if (err) { throw err; }
 				console.log(util.format('=== %s ===', SYMBOL).cyan);
 				console.log(JSON.stringify(snapshot, null, 2));
+				callback(snapshot);
 			});
 		}
 		else {

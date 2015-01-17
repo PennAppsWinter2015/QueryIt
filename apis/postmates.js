@@ -1,9 +1,9 @@
 var api = {}
 
 api.sendSomething = {
-	phrases: ['send', 'package', 'deliver'],
+	phrases: ['send', 'package', 'deliver','mail','postmate'],
 	call_api: function() {
-		console.log('fetching stock data')
+		console.log('sending package')
         return 
 	}
 }

@@ -34,7 +34,7 @@ app.get('/', routes.index);
 fs.readdir("apis", function(err, files) {
 	if (err != null) throw err;
 	for (var i =0; i<files.length; i++) {
-		var api = files[i]
+		var api = files[i];
 		var api_object = require("./apis/" + api);
 
 		console.log('\n\napi name: ' + api)

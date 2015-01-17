@@ -36,7 +36,6 @@ fs.readdir("apis", function(err, files) {
 	for (var i =0; i<files.length; i++) {
 		var api = files[i];
 		var api_object = require("./apis/" + api);
-
 		console.log('\n\napi name: ' + api)
 		for (var key in api_object) {
 			console.log('\napi method: ', key)

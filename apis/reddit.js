@@ -9,7 +9,7 @@ api.trendingSubReddits = {
 }
 
 api.frontPage = {
-	phrases: ['reddit front page', 'trending on reddit', 'reddit'],
+	phrases: ['reddit front page', 'trending on reddit', 'reddit', 'hot', 'rising'],
 	call_api: function() {
 		console.log('fetching reddit front page')
 	}

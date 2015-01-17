@@ -39,7 +39,6 @@ fs.readdir("apis", function(err, files) {
 		var api = files[i];
 		if (api[0] == ".") continue; //ignore hidden files
 		var api_object = require("./apis/" + api);
-
 		console.log('\n\napi name: ' + api)
 		for (var key in api_object) {
 			console.log('\napi method: ', key)
@@ -50,7 +49,7 @@ fs.readdir("apis", function(err, files) {
 				classifier.addDocument(api_object[key].phrases[k],key);
 			}
 			api_object[key].call_api(function(result) {
-				if (result != null) console.log(result)
+				if (result != null) console.log("Result: %j", result);
 			})
 		}
 	}

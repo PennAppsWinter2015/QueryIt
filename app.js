@@ -74,12 +74,12 @@ function testCase(text) {
 	console.log(text+":", classifier.classify(text));
 }
 
-
-app.post('/api', function(req, res) {
-	api_location = classifier.classify(req.body.text).split(" ")
+app.all('/api', function(req, res) {
+	var input = req.body.text || req.query.text;
+	api_location = classifier.classify(input).split(" ")
 	filename = api_location[0]
 	method = api_location[1]
-	var api = require("./apis/" + filename)[method].call_api(req.body.text, function(data) {
+	var api = require("./apis/" + filename)[method].call_api(input, function(data) {
 		res.json(data)
 	});
 })

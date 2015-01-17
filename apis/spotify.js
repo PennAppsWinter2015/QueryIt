@@ -1,13 +1,16 @@
 var api = {}
 
 var SpotifyWebApi = require('spotify-web-api-node');
-var spotifyApi = new SpotifyWebApi();
-api.artistSearch = {}
-api.artistSearch.phrases = ['music by', 'artist', 'singer', 'songwriter'];
+var spotify_helper = require('../helpers/spotify_helper');
 
-api.artistSearch.call_api = function(rawSearchText, callback) {
-  for (var i = 0; i < api.artistSearch.phrases.length; i++) {
-    rawSearchText = rawSearchText.replace(api.artistSearch.phrases[i], '')
+
+var spotifyApi = new SpotifyWebApi();
+api.trackSearch = {}
+api.trackSearch.phrases = ['music by', 'artist', 'singer', 'songwriter', 'songs by'];
+
+api.trackSearch.call_api = function(rawSearchText, callback) {
+  for (var i = 0; i < api.trackSearch.phrases.length; i++) {
+    rawSearchText = rawSearchText.replace(api.trackSearch.phrases[i], '')
   };
   spotifyApi.searchTracks('artist:' + rawSearchText.trim())
     .then(function(data) {
@@ -17,16 +20,19 @@ api.artistSearch.call_api = function(rawSearchText, callback) {
     });
 }
 
-// api.trackSearch = {
-//   phrases: ['music', 'top 100 hits', 'hits', 'rap','country','pop','billboard hits'],
-//   call_api: function(rawSearchText, callback) {
-//     spotifyApi.searchTracks(artist)
-//       .then(function(data) {
-//     callback(data)
-//       }, function(err) {
-//         console.error(err);
-//       });
-//   }
-// }
+api.playlistSearch = {}
+api.playlistSearch.phrases = ['playlists', 'playlist'];
+
+api.playlistSearch.call_api = function(rawSearchText, callback) {
+  for (var i = 0; i < api.playlistSearch.phrases.length; i++) {
+    rawSearchText = rawSearchText.replace(api.playlistSearch.phrases[i], '')
+  };
+  spotifyApi.searchPlaylist(rawSearchText.trim())
+    .then(function(data) {
+  callback(data)
+    }, function(err) {
+      console.error(err);
+    });
+}
 
 module.exports = api;

@@ -33,15 +33,21 @@ api.getPrice = {
 	phrases: ['get quote', 'stock', 'stock price', 'price of', 'what is trading at'],
 	call_api: function(rawText, callback) {
 		console.log('grabbing stock price');
-		var SYMBOL = rawText.match(symbolMatch)[0];
-		yahooFinance.snapshot({
-			fields: FIELDS,
-			symbol: SYMBOL
-		}, function (err, snapshot) {
-			if (err) { throw err; }
-			console.log(util.format('=== %s ===', SYMBOL).cyan);
-			console.log(JSON.stringify(snapshot, null, 2));
-		});
+		var matched;
+		if(matched = rawText.match(symbolMatch)) {
+			var SYMBOL = matched[0];
+			yahooFinance.snapshot({
+				fields: FIELDS,
+				symbol: SYMBOL
+			}, function (err, snapshot) {
+				if (err) { throw err; }
+				console.log(util.format('=== %s ===', SYMBOL).cyan);
+				console.log(JSON.stringify(snapshot, null, 2));
+			});
+		}
+		else {
+			console.log('Could not understand your input!');
+		}
 	}
 }
 

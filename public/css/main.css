@@ -71,10 +71,19 @@ body {
 .changeColor {
 		color: 
 }
+#jsonstuff {
+	overflow: auto;
+	height: 400px;
+	background-color: white	;
+}
 .form-control {
 	opacity: 0.7;
 
 /*	-webkit-animation: type 5s steps(50, end);
     animation: type 5s steps(50, end);*/
 
+}
+.jsonview  {
+	font-size: 13px;
+	color: black
 }

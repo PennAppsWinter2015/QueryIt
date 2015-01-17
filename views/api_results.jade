@@ -25,5 +25,18 @@ block content
                   | urllib.request.urlopen("#{url}").read()
 
             #node.tab-pane(role='tabpanel') Node
+              pre
+                code(class="language-javascript")
+                  | var request = require('request');
+                  | request('#{url}', function (error, response, body) {
+                  |  if (!error && response.statusCode == 200) {
+                  |    console.log(body)
+                  |  }
+                  | })
             #ruby.tab-pane(role='tabpanel') Ruby
+              pre
+                code(class="language-ruby")
+                  | require 'net/http'
+                  | uri = URI('#{url}')
+                  | Net::HTTP.get(uri)
       .col-md-6

@@ -9,10 +9,11 @@
     "express": "*",
     "jade": "*",
     "stylus": "*",
-	"serve-favicon": "*",
-	"morgan": "*",
-	"body-parser": "*",
-	"method-override": "*"
+    "serve-favicon": "*",
+    "morgan": "*",
+    "body-parser": "*",
+    "method-override": "*",
+    "natural" : "*"
   },
   "engines": {
     "node": "0.10.30",

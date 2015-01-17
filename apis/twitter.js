@@ -14,7 +14,7 @@ api.trending = {
 	phrases: ['trending on twitter', 'popular on twitter'],
 	call_api: function(callback) {
 		T.get('trends/place', {id : "1"}, function(err, data, response) {
-		  if (err != null) throw err;
+		    if (err != null) console.log("error", err)
 		  callback(data)
 		})
 	}

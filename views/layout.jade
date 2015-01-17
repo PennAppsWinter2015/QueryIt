@@ -1,6 +1,8 @@
 doctype html
 html
 	head
+		if hideHeader == null
+			include header		
 		block head
 			block title
 				title Program Name
@@ -12,6 +14,5 @@ html
 			link(rel='stylesheet', href='/css/main.css')
 			script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
 	body
-		include header
 
 		block content

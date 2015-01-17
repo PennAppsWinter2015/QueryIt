@@ -24,7 +24,13 @@ block content
               a(href='#swift', aria-controls='php', role='tab', data-toggle='tab') Swift
           .tab-content
             #python.tab-pane.active(role='tabpanel')
-              h3 Python
+              h3 Python 2
+              pre
+                code(class="language-python")
+                  | import urllib2
+                  | urllib2.urlopen("http://example.com/foo/bar").read()
+
+              h3 Python 3
               pre
                 code(class="language-python")
                   | import urllib.request

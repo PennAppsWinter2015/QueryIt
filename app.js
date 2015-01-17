@@ -40,7 +40,7 @@ var apis = []
 
 fs.readdir("apis", function(err, files) {
 	if (err != null) throw err;
-	files = ['yahoofinance.js'];
+	// files = ['yahoofinance.js'];
 	for (var i =0; i<files.length; i++) {
 		var api = files[i];
 		if (api[0] == ".") continue; //ignore hidden files

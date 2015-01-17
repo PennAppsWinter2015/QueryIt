@@ -8,7 +8,4 @@ api.sendSomething = {
 	}
 }
 
-
-}
-
 module.exports = api;

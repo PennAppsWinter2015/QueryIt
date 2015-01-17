@@ -22,6 +22,20 @@ api.top_videos = {
 		    callback(data)
 		});
 	}
+    
+api.channel_search = {
+	phrases: ['videos', 'video'],
+	call_api: function(rawSearchText, callback) {
+		Youtube.search.list({
+		    "part": "id, snippet"
+		  , "maxResults": 50
+		  , "type": "video"
+          , "q": rawSearchText
+		}, function (err, data) {
+		    if (err != null) console.log("error", err)
+		    callback(data)
+		});
+	}
 }
 
 module.exports = api;

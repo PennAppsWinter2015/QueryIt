@@ -8,8 +8,10 @@ api.new_movies_in_theatres = {
 	}
 }
 
-api.cast_info = {
-	phrases: ['movie cast', ' movie actors', 'actors in', 'cast of', 'rising'],
+
+    
+api.movie_info = {
+	phrases: ['movie cast', ' movie actors', 'actors in', 'cast of', 'rising', 'ratings', 'how good'],
 	call_api: function() {
 		console.log('getting cast info')
 	}

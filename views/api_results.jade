@@ -15,7 +15,9 @@ block content
             li(role='presentation')
               a(href='#node', aria-controls='node', role='tab', data-toggle='tab') Node.js
             li(role='presentation')
-              a(href='#ruby', aria-controls='node', role='tab', data-toggle='tab') Ruby
+              a(href='#ruby', aria-controls='ruby', role='tab', data-toggle='tab') Ruby
+            li(role='presentation')
+              a(href='#php', aria-controls='php', role='tab', data-toggle='tab') PHP
           .tab-content
             #python.tab-pane.active(role='tabpanel')
               h3 Python
@@ -24,6 +26,24 @@ block content
                   | import urllib.request
                   | urllib.request.urlopen("#{url}").read()
 
-            #node.tab-pane(role='tabpanel') Node
-            #ruby.tab-pane(role='tabpanel') Ruby
+            #node.tab-pane(role='tabpanel') 
+             h3 Node
+              pre
+                code(class="language-node")
+                  | import urllib.request
+                  | urllib.request.urlopen("#{url}").read()
+
+            #ruby.tab-pane(role='tabpanel') 
+             h3 Ruby
+              pre
+                code(class="language-ruby")
+                  | import urllib.request
+                  | urllib.request.urlopen("#{url}").read()
+            #php.tab-pane(role='tabpanel') 
+             h3 PHP
+              pre
+                code(class="language-php")
+                  | import urllib.request
+                  | urllib.request.urlopen("#{url}").read()
+
       .col-md-6

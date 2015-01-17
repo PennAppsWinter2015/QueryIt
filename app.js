@@ -33,6 +33,11 @@ var natural = require('natural'),
 
 app.get('/', routes.index);
 
+//in memory storage of the apis
+// [{raw_text, func}]
+
+var apis = []
+
 fs.readdir("apis", function(err, files) {
 	if (err != null) throw err;
 	for (var i =0; i<files.length; i++) {
@@ -69,6 +74,20 @@ setTimeout(function() {
 function testCase(text) {
 	console.log(text+":", classifier.classify(text));
 }
+
+
+app.post('/new_api', function(req, res) {
+	// add api to apis{}
+	// redirect to api/:hash
+})
+
+app.get('/api/:id', function(req, res) {
+	var api = apis[req.param.id]
+	api.func.call_api(api.raw_text, function (data) {
+		res.json(data)
+	})
+})
+
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

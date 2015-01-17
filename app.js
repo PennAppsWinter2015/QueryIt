@@ -76,18 +76,27 @@ function testCase(text) {
 
 app.all('/api', function(req, res) {
 	var input = req.body.text || req.query.text;
-	api_location = classifier.classify(input).split(" ")
-	var filename = api_location[0]
-	var method = api_location[1]
-	var api = require("./apis/" + filename)[method].call_api(input, function(data) {
+	getResults(input, function(data) {
 		res.json(data)
 	});
 })
 
+var getResults = function(input, callback) {
+	var api_location = classifier.classify(input).split(" ")
+	var filename = api_location[0]
+	var method = api_location[1]
+	var api = require("./apis/" + filename)[method].call_api(input, function(data) {
+		callback(data)
+	})
+}
+
 app.get('/result', function(req, res) {
 	var input = req.query.text;
 	var url = "http://localhost:3000/api?text=" + input
-	res.render('api_results', {url: url})
+	getResults(input, function(data) {
+		console.log("result", data)
+		res.render('api_results', {url: url, result: JSON.stringify(data)})
+	})
 })
 
 http.createServer(app).listen(app.get('port'), function(){

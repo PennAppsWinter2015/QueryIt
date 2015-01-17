@@ -26,7 +26,8 @@
     "lodash": "*",
     "blpapi": "*",
     "yelp": "*",
-    "request": "*"
+    "request": "*",
+    "node-freegeoip": "*"
   },
   "engines": {
     "node": "0.10.30",

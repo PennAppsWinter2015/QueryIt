@@ -1,6 +1,12 @@
 extends layout
 
 block content
-	div.container
-		h1 Program Name
-		p Hello World
+    #sectionH.container
+      h1 Quaerit
+      .row
+        .col-lg-6.col-lg-offset-3
+          .input-group
+            input.form-control(type='text', placeholder='Search for...')
+            |       
+            span.input-group-btn
+              button.btn.btn-success(type='button', style='font-color:#3e3f3a')  Go!

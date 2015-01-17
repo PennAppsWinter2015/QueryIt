@@ -77,13 +77,12 @@ function testCase(text) {
 app.all('/api', function(req, res) {
 	var input = req.body.text || req.query.text;
 	api_location = classifier.classify(input).split(" ")
-	filename = api_location[0]
-	method = api_location[1]
+	var filename = api_location[0]
+	var method = api_location[1]
 	var api = require("./apis/" + filename)[method].call_api(input, function(data) {
 		res.json(data)
 	});
 })
-
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

@@ -47,7 +47,7 @@ api.getQuote = {
 			});
 		}
 		else {
-			console.log('Could not understand your input!');
+			callback('Could not understand your input!');
 		}
 	}
 }

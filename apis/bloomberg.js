@@ -1,5 +1,12 @@
 var api = {}
 
+var blpapi = require('blpapi');
+var session = new blpapi.Session({ host: 'localhost', port: 8194 });
+
+session.on('SessionStarted', function(m) {
+  
+});
+
 api.priceToEarnings = {
 	phrases: ['price', 'earnings', 'pe', 'p/e'],
 	call_api: function() {

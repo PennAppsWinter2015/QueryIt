@@ -21,7 +21,8 @@
     "natural" : "*",
     "youtube-api": "*",
     "stringify-object": "*",
-    "spotify-web-api-node": "*"
+    "spotify-web-api-node": "*",
+    "blpapi": "*"
   },
   "engines": {
     "node": "0.10.30",

@@ -48,7 +48,7 @@ fs.readdir("apis", function(err, files) {
 				console.log('adding ' + api_object[key].phrases[k] + ', ' + key);
 				classifier.addDocument(api_object[key].phrases[k],key);
 			}
-			api_object[key].call_api("music by Meghan Trainor", function(result) {
+			api_object[key].call_api("country playlists", function(result) {
 				if (result != null) console.log("Result: %j", result);
 			})
 		}

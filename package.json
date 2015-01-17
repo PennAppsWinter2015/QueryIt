@@ -24,7 +24,8 @@
     "spotify-web-api-node": "*",
     "yahoo-finance": "*",
     "lodash": "*",
-    "blpapi": "*"
+    "blpapi": "*",
+    "yelp": "*"
   },
   "engines": {
     "node": "0.10.30",

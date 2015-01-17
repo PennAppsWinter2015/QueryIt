@@ -18,7 +18,9 @@
     "morgan": "*",
     "body-parser": "*",
     "method-override": "*",
-    "natural" : "*"
+    "natural" : "*",
+    "youtube-api": "*",
+    "stringify-object": "*"
   },
   "engines": {
     "node": "0.10.30",

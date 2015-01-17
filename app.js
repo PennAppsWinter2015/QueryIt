@@ -41,7 +41,7 @@ fs.readdir("apis", function(err, files) {
 			console.log('\napi method: ', key)
 			console.log('api phrases: ', api_object[key].phrases)
 			api_object[key].call_api(function(result) {
-				if (result != null) console.log(result)
+				if (result != null) console.log("Result: %j", result);
 			})
 		}
 	}

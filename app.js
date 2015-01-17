@@ -28,6 +28,9 @@ if (app.get('env') == 'development') {
 	app.locals.pretty = true;
 }
 
+var natural = require('natural'),
+  classifier = new natural.BayesClassifier();
+
 app.get('/', routes.index);
 
 fs.readdir("apis", function(err, files) {
@@ -40,11 +43,20 @@ fs.readdir("apis", function(err, files) {
 		for (var key in api_object) {
 			console.log('\napi method: ', key)
 			console.log('api phrases: ', api_object[key].phrases)
+			for(var k = 0;k < api_object[key].phrases.length;k++) {
+				console.log(api_object[key][0]);
+				console.log('adding ' + api_object[key].phrases[k] + ', ' + key);
+				classifier.addDocument(api_object[key].phrases[k],key);
+			}
 			api_object[key].call_api("music by Meghan Trainor", function(result) {
 				if (result != null) console.log("Result: %j", result);
 			})
 		}
 	}
+	classifier.train();
+	classifier.save('classifier.json', function(err, classifier) {
+		console.log(classifier.classify('coolest tech'));
+ 	});
 })
 
 

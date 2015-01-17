@@ -18,6 +18,10 @@ block content
               a(href='#ruby', aria-controls='ruby', role='tab', data-toggle='tab') Ruby
             li(role='presentation')
               a(href='#php', aria-controls='php', role='tab', data-toggle='tab') PHP
+            li(role='presentation')
+              a(href='#java', aria-controls='php', role='tab', data-toggle='tab') Java
+            li(role='presentation')
+              a(href='#swift', aria-controls='php', role='tab', data-toggle='tab') Swift
           .tab-content
             #python.tab-pane.active(role='tabpanel')
               h3 Python
@@ -48,7 +52,26 @@ block content
              h3 PHP
               pre
                 code(class="language-php")
-                  | import urllib.request
-                  | urllib.request.urlopen("#{url}").read()
+                  |$response = http_get("#{url}", array("timeout"=>1), $info);
+                  |print_r($info);
+                  
+            #java.tab-pane(role='tabpanel') 
+             h3 Java
+              pre
+                code(class="language-java")
+                  |urlString = "#{url}";
+                  |URL url = new URL(urlString);
+                  |URLConnection conn = url.openConnection();
+                  |InputStream is = conn.getInputStream() 
+            #swift.tab-pane(role='tabpanel') 
+             h3 Swift
+              pre
+                code(class="language-swift")
+                  | let url = NSURL(string: "#{url}")
+                  | let task = NSURLSession.sharedSession().dataTaskWithURL(url!) 
+                  |{
+                  |(data, response, error) in println(NSString(data: data, encoding: NSUTF8StringEncoding))
+                  | }
+                  | task.resume()
 
       .col-md-6

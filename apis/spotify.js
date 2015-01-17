@@ -10,7 +10,7 @@ api.artistSearch = {
 api.trackSearch = {
 	phrases: ['music', 'top 100 hits', 'hits', 'rap','country','pop','billboard hits'],
 	call_api: function() {
-		console.log('fetching tack')
+		console.log('fetching track')
          
 	}
 }

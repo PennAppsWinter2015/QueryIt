@@ -24,6 +24,7 @@ app.use(methodOverride('_method'));
 app.use(require('stylus').middleware(__dirname + '/public'));
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 if (app.get('env') == 'development') {
 	app.locals.pretty = true;
 }
@@ -32,11 +33,6 @@ var natural = require('natural'),
   classifier = new natural.BayesClassifier();
 
 app.get('/', routes.index);
-
-//in memory storage of the apis
-// [{raw_text, func}]
-
-var apis = []
 
 fs.readdir("apis", function(err, files) {
 	if (err != null) throw err;
@@ -49,12 +45,12 @@ fs.readdir("apis", function(err, files) {
 		for (var key in api_object) {
 			console.log('\napi method: ', key)
 			console.log('api phrases: ', api_object[key].phrases)
-			for(var k = 0;k < api_object[key].phrases.length;k++) {
-				console.log('adding ' + api_object[key].phrases[k] + ', ' + key);
-				classifier.addDocument(api_object[key].phrases[k],key);
+			for(var k = 0; k < api_object[key].phrases.length; k++) {
+				console.log('adding ' + api_object[key].phrases[k] + ', ' + api + ' ' + key);
+				classifier.addDocument(api_object[key].phrases[k], api + ' ' + key);
 			}
-			api_object[key].call_api("country playlists", function(result) {
-				if (result != null) console.log("Result: %j", result);
+			api_object[key].call_api("what is AAPL trading at", function(result) {
+				// if (result != null) console.log("Result: %j", result);
 			})
 		}
 	}
@@ -79,16 +75,13 @@ function testCase(text) {
 }
 
 
-app.post('/new_api', function(req, res) {
-	// add api to apis{}
-	// redirect to api/:hash
-})
-
-app.get('/api/:id', function(req, res) {
-	var api = apis[req.param.id]
-	api.func.call_api(api.raw_text, function (data) {
+app.post('/api', function(req, res) {
+	api_location = classifier.classify(req.body.text).split(" ")
+	filename = api_location[0]
+	method = api_location[1]
+	var api = require("./apis/" + filename)[method].call_api(req.body.text, function(data) {
 		res.json(data)
-	})
+	});
 })
 
 

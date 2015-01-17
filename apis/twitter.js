@@ -12,7 +12,7 @@ var T = new Twit({
 
 api.trending = {
 	phrases: ['trending on twitter', 'popular on twitter'],
-	call_api: function(callback) {
+	call_api: function(rawSearchText, callback) {
 		T.get('trends/place', {id : "1"}, function(err, data, response) {
 		    if (err != null) console.log("error", err)
 		  callback(data)

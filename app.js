@@ -40,7 +40,7 @@ fs.readdir("apis", function(err, files) {
 		for (var key in api_object) {
 			console.log('\napi method: ', key)
 			console.log('api phrases: ', api_object[key].phrases)
-			api_object[key].call_api(function(result) {
+			api_object[key].call_api("music by Meghan Trainor", function(result) {
 				if (result != null) console.log("Result: %j", result);
 			})
 		}

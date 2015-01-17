@@ -86,7 +86,7 @@ app.all('/api', function(req, res) {
 
 app.get('/result', function(req, res) {
 	var input = req.query.text;
-	var url = "http://localhost:3000/api/" + input
+	var url = "http://localhost:3000/api?text=" + input
 	res.render('api_results', {url: url})
 })
 

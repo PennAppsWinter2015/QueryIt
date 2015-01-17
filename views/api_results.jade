@@ -1,7 +1,29 @@
 extends layout
-		
 
 block content
-	.well
-		h3 Api result page
-		h3 url: #{url}
+  .container(style='color:white;')
+    .row
+      .col-md-6
+        h3 Api result page
+        h3 url: #{url}
+    .row
+      .col-md-6
+        div(role='tabpanel')
+          ul.nav.nav-tabs(role='tablist')
+            li.active(role='presentation')
+              a(href='#python', aria-controls='python', role='tab', data-toggle='tab') Python
+            li(role='presentation')
+              a(href='#node', aria-controls='node', role='tab', data-toggle='tab') Node.js
+            li(role='presentation')
+              a(href='#ruby', aria-controls='node', role='tab', data-toggle='tab') Ruby
+          .tab-content
+            #python.tab-pane.active(role='tabpanel')
+              h3 Python
+              pre
+                code(class="language-python")
+                  | import urllib.request
+                  | urllib.request.urlopen("#{url}").read()
+
+            #node.tab-pane(role='tabpanel') Node
+            #ruby.tab-pane(role='tabpanel') Ruby
+      .col-md-6

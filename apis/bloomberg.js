@@ -1,9 +1,9 @@
 var api = {}
 
 api.topStocks = {
-	phrases: ['top stocks', 'reddit', 'sub reddit'],
+	phrases: ['top stocks', 'stocks',],
 	call_api: function() {
-		console.log('fetching reddit data')
+		console.log('fetching stock data')
         return 
 	}
 }
@@ -11,7 +11,7 @@ api.topStocks = {
 api.fiftwoWeekLow = {
 	phrases: ['52 week low', 'most upside potential'],
 	call_api: function() {
-		console.log('fetching reddit front page')
+		console.log('fetching stock data')
 	}
 }
 

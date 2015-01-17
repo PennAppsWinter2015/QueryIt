@@ -36,7 +36,6 @@ fs.readdir("apis", function(err, files) {
 		var api = files[i];
 		if (api[0] == ".") continue; //ignore hidden files
 		var api_object = require("./apis/" + api);
-
 		console.log('\n\napi name: ' + api)
 		for (var key in api_object) {
 			console.log('\napi method: ', key)

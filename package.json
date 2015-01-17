@@ -23,7 +23,7 @@
     "stringify-object": "*",
     "spotify-web-api-node": "*",
     "yahoo-finance": "*",
-    "lodash": "*"
+    "lodash": "*",
     "blpapi": "*"
   },
   "engines": {

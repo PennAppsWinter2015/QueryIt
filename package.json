@@ -1,5 +1,9 @@
 {
-  "name": "nodebootstraper",
+  "name": "APIConglomerate",
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/PennAppsWinter2015/Backend.git"
+  },
   "version": "0.0.2",
   "dependencies": {
     "express": "*",

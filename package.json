@@ -25,6 +25,7 @@
     "yahoo-finance": "*",
     "lodash": "*",
     "blpapi": "*",
+    "yelp": "*",
     "request": "*"
   },
   "engines": {

@@ -25,11 +25,8 @@
     "yahoo-finance": "*",
     "lodash": "*",
     "blpapi": "*",
-<<<<<<< HEAD
-    "yelp": "*"
-=======
+    "yelp": "*",
     "request": "*"
->>>>>>> 0763d6ef51da66b2c0af82d80f779e474838a93f
   },
   "engines": {
     "node": "0.10.30",

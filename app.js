@@ -54,11 +54,21 @@ fs.readdir("apis", function(err, files) {
 		}
 	}
 	classifier.train();
-	classifier.save('classifier.json', function(err, classifier) {
-		console.log(classifier.classify('coolest tech'));
- 	});
 })
 
+setTimeout(function() {
+	classifier.save('classifier.json', function(err, classifier) {
+		testCase("most popular videos on youtube")
+		testCase("youtube's top videos");
+		testCase("popular youtube videos");
+		testCase("music by kanye west");
+		testCase('most famous twitter accounts')
+ 	});
+}, 3000)
+
+function testCase(text) {
+	console.log(text+":", classifier.classify(text));
+}
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

@@ -21,7 +21,7 @@ api.trending = {
 }
 
 api.top_users = {
-	phrases: ['top accounts', 'most popular users'],
+	phrases: ['top twitter accounts', 'twitter top users','top accounts', 'most popular users'],
 	call_api: function() {
 		console.log('fetching top twitter users')
 	}

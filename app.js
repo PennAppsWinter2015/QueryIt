@@ -14,7 +14,6 @@ var express = require('express')
   , methodOverride = require('method-override');
 
 var app = express();
-
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
@@ -41,7 +40,9 @@ fs.readdir("apis", function(err, files) {
 		for (var key in api_object) {
 			console.log('\napi method: ', key)
 			console.log('api phrases: ', api_object[key].phrases)
-			api_object[key].call_api()
+			api_object[key].call_api(function(result) {
+				if (result != null) console.log(result)
+			})
 		}
 	}
 })

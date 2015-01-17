@@ -12,7 +12,8 @@
 	"serve-favicon": "*",
 	"morgan": "*",
 	"body-parser": "*",
-	"method-override": "*"
+	"method-override": "*",
+  "twit": "*"
   },
   "engines": {
     "node": "0.10.30",

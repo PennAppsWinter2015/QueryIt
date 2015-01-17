@@ -9,19 +9,16 @@
     "express": "*",
     "jade": "*",
     "stylus": "*",
-<<<<<<< HEAD
-	"serve-favicon": "*",
-	"morgan": "*",
-	"body-parser": "*",
-	"method-override": "*",
-  "twit": "*"
-=======
+    "serve-favicon": "*",
+    "morgan": "*",
+    "body-parser": "*",
+    "method-override": "*",
+    "twit": "*",
     "serve-favicon": "*",
     "morgan": "*",
     "body-parser": "*",
     "method-override": "*",
     "natural" : "*"
->>>>>>> 1aad7a2a9e2f7cdc1eb74440b319f4572a1a1109
   },
   "engines": {
     "node": "0.10.30",

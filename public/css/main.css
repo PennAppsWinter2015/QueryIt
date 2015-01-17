@@ -1,0 +1,43 @@
+body h1 {
+	color: #81b33a;
+}
+
+body {
+	background-color: #3e3f3a;
+
+}
+@keyframes type{
+    from { width: 0; }
+}
+
+@-webkit-keyframes type{
+    from { width: 0; }
+}
+
+.form-group {
+	margin-top: 5%;
+	margin-left: 20%;
+	margin-right: 20%;
+}
+#sectionH {
+	margin-top: 10%
+}
+
+#sectionH h1 {
+		text-align: center;
+		font-size: 80px;
+		 
+
+}
+
+.navbar {
+	background-color: #3e3f3a;
+	border-color: #3e3f3a;
+}
+
+.form-control {
+	opacity: 0.7;
+	-webkit-animation: type 5s steps(50, end);
+    animation: type 5s steps(50, end);
+
+}

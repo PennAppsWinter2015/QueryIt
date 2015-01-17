@@ -40,6 +40,7 @@ var apis = []
 
 fs.readdir("apis", function(err, files) {
 	if (err != null) throw err;
+	files = ['yahoofinance.js'];
 	for (var i =0; i<files.length; i++) {
 		var api = files[i];
 		if (api[0] == ".") continue; //ignore hidden files
@@ -49,7 +50,6 @@ fs.readdir("apis", function(err, files) {
 			console.log('\napi method: ', key)
 			console.log('api phrases: ', api_object[key].phrases)
 			for(var k = 0;k < api_object[key].phrases.length;k++) {
-				console.log(api_object[key][0]);
 				console.log('adding ' + api_object[key].phrases[k] + ', ' + key);
 				classifier.addDocument(api_object[key].phrases[k],key);
 			}
@@ -63,11 +63,14 @@ fs.readdir("apis", function(err, files) {
 
 setTimeout(function() {
 	classifier.save('classifier.json', function(err, classifier) {
-		testCase("most popular videos on youtube")
+		testCase("most popular videos on youtube");
 		testCase("youtube's top videos");
 		testCase("popular youtube videos");
 		testCase("music by kanye west");
-		testCase('most famous twitter accounts')
+		testCase('most famous twitter accounts');
+		testCase('what is AAPL trading at');
+		testCase('stock price AAPL');
+
  	});
 }, 3000)
 

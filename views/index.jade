@@ -5,8 +5,9 @@ block content
       h1 Quaerit
       .row
         .col-lg-6.col-lg-offset-3
-          .input-group
-            input.form-control(type='text', placeholder='Search for...')
-            |       
-            span.input-group-btn
-              button.btn.btn-success(type='button', style='font-color:#3e3f3a')  Go!
+          form(action='/result')
+            .input-group
+              input.form-control(type='text', name='text', placeholder='Search for...')
+              |       
+              span.input-group-btna
+                button.btn.btn-success(type='button', style='font-color:#3e3f3a')  Go!

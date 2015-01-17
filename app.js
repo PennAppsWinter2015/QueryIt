@@ -84,6 +84,12 @@ app.all('/api', function(req, res) {
 	});
 })
 
+app.get('/result', function(req, res) {
+	var input = req.query.text;
+	var url = "http://localhost:3000/api/" + input
+	res.render('api_results', {url: url})
+})
+
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
 });

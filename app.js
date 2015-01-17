@@ -34,6 +34,7 @@ fs.readdir("apis", function(err, files) {
 	if (err != null) throw err;
 	for (var i =0; i<files.length; i++) {
 		var api = files[i];
+		if (api[0] == ".") continue; //ignore hidden files
 		var api_object = require("./apis/" + api);
 		console.log('\n\napi name: ' + api)
 		for (var key in api_object) {

@@ -1,18 +1,20 @@
 var api = {}
 
-api.popularMusic = {
-	phrases: ['top 100 songs', 'radio music', 'top music charts'],
+api.artistSearch = {
+	phrases: ['music by', 'artist', 'singer', 'songwriter'],
 	call_api: function() {
-		console.log('fetching music')
+		console.log('fetching artiest')
+         
+	}
+}
+api.trackSearch = {
+	phrases: ['music', 'top 100 hits', 'hits', 'rap','country','pop','billboard hits'],
+	call_api: function() {
+		console.log('fetching tack')
          
 	}
 }
 
-api.hiphopMusic = {
-	phrases: ['hiphop', 'rap', 'mixtape', 'top hiphop'],
-	call_api: function() {
-		console.log('fetching hiphop music')
-	}
-}
+
 
 module.exports = api;

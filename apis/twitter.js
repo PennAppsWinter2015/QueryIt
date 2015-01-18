@@ -23,18 +23,6 @@ function getTwitterAPI() {
 
 
 
-
-api.trending = {
-  phrases: ['trending on twitter worldwide', 'popular on twitter worldwide', 'popular on twitter everywhere'],
-  call_api: function(rawSearchText, callback) {
-	var T = getTwitterAPI();
-    T.get('trends/place', {id : "1"}, function(err, data, response) {
-        if (err != null) console.log("error", err)
-      callback(data)
-    })
-  }
-}
-
 api.trending_location = {
   phrases: ['trending tweets in the us', 'trending tweets', 'popular tweets'],
   call_api: function(rawSearchText, callback) {
@@ -44,8 +32,19 @@ api.trending_location = {
       function (error, response, body) {
         if (!error && response.statusCode == 200) {
           loc = JSON.parse(body)
-          geoLocation = loc["results"][0]["geometry"]["location"]
-          console.log(geoLocation)
+          try {
+            geoLocation = loc["results"][0]["geometry"]["location"]
+          	console.log(geoLocation)
+          } catch(e) {
+          	getTwitterAPI().get('trends/place', {id : 1}, function(err, d, response) {
+              if (err != null) {
+              	console.log("trends/place WORLDWIDE error", err)
+              	return;
+              }
+              callback(d)
+            })
+            return;
+          }
 		  var T = getTwitterAPI();
           T.get('trends/closest', {lat : geoLocation["lat"], long: geoLocation["lng"]}, function(err, data, response) {
             if (err != null) {

@@ -7,7 +7,7 @@ api.topNews = {
   phrases: ['breaking news', 'todays news','current news', 'news', 'todays news'],
   call_api: function(raw_text, callback) {
     raw_text = raw_text.replace("news","");
-    request('http://api.usatoday.com/open/articles?keyword='+ raw_text +'encoding=JSON&api_key=' + keys.USATODAY_ARTICLES_KEY, function (error, response, body) {
+    request('http://api.usatoday.com/open/articles?keyword='+ raw_text +'&encoding=JSON&api_key=' + keys.USATODAY_ARTICLES_KEY, function (error, response, body) {
       if (!error && response.statusCode == 200) {
         callback(body)
       } else {

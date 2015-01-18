@@ -10,6 +10,7 @@
 
 body h1 {
 	color: #81b33a;
+	text-align: center;
 }
 
 body {
@@ -73,7 +74,7 @@ body {
 }
 #jsonstuff {
 	overflow: auto;
-	height: 400px;
+	height: 700px;
 	background-color: white	;
 }
 .form-control {

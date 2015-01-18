@@ -12,9 +12,9 @@ block content
         div(role='tabpanel')
           ul.nav.nav-tabs(role='tablist')
             li.active(role='presentation')
-              a(href='#python', aria-controls='python', role='tab', data-toggle='tab') Python
-            li(role='presentation')
               a(href='#node', aria-controls='node', role='tab', data-toggle='tab') Node.js
+            li(role='presentation')
+              a(href='#python', aria-controls='python', role='tab', data-toggle='tab') Python
             li(role='presentation')
               a(href='#ruby', aria-controls='ruby', role='tab', data-toggle='tab') Ruby
             li(role='presentation')
@@ -24,7 +24,7 @@ block content
             li(role='presentation')
               a(href='#swift', aria-controls='php', role='tab', data-toggle='tab') Swift
           .tab-content
-            #python.tab-pane.active(role='tabpanel')
+            #python.tab-pane(role='tabpanel')
               h3 Python 2
               pre
                 code(class="language-python")
@@ -37,7 +37,7 @@ block content
                   | import urllib.request
                   | urllib.request.urlopen("#{url}").read()
 
-            #node.tab-pane(role='tabpanel')
+            #node.tab-pane.active(role='tabpanel')
               h3 Node.js 
               pre
                 code(class="language-javascript")
@@ -55,8 +55,8 @@ block content
                   | uri = URI('#{url}')
                   | Net::HTTP.get(uri)
 
-            #php.tab-pane(role='tabpanel') 
-             h3 PHP
+            #php.tab-pane(role='tabpanel')
+             h3 PHPcustom_scrollbar
               pre
                 code(class="language-php")
                   |$response = http_get("#{url}", array("timeout"=>1), $info);
@@ -83,4 +83,4 @@ block content
 
       #jsonstuff.col-md-6
         #json_result.hidden #{result}
-        #json
+        #json(style='overflow-x: hidden;')

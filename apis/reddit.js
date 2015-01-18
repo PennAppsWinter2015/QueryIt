@@ -17,7 +17,7 @@ api.frontPage = {
 	call_api: function(rawText, callback) {
         reddit.r('funny', function (err, results) {
             if (err != null) console.log("error", err)
-		    callback(data)
+		    callback(results.body)
         })
 		console.log('fetching reddit front page')
 	}

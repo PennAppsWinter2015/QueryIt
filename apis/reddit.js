@@ -15,7 +15,7 @@ api.trendingSubReddits = {
 api.frontPage = {
 	phrases: ['reddit front page', 'trending on reddit', 'reddit', 'hot', 'rising'],
 	call_api: function(rawText, callback) {
-        reddit.r('funny', function (err, results) {
+        reddit.r('all', function (err, results) {
             if (err != null) console.log("error", err)
 		    callback(results.body)
         })

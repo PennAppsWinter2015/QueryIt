@@ -75,6 +75,9 @@ body {
 #jsonstuff {
 	overflow: auto;
 	height: 700px;
+	-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
 	background-color: white	;
 }
 .form-control {

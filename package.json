@@ -24,6 +24,7 @@
     "spotify-web-api-node": "*",
     "yahoo-finance": "*",
     "lodash": "*",
+    "handson-reddit": "*",
     "blpapi": "*",
     "yelp": "*",
     "request": "*",

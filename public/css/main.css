@@ -81,6 +81,10 @@ body {
 	padding: 1%;
 	background-color: white	;
 }
+.navbar {
+	border-radius: 0px;
+}
+
 .form-control {
 	opacity: 0.7;
 

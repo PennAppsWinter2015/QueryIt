@@ -2,7 +2,7 @@
   "name": "APIConglomerate",
   "repository" : {
     "type" : "git",
-    "url" : "https://github.com/PennAppsWinter2015/Backend.git"
+    "url" : "https://github.com/PennAppsWinter2015/Quaerit.git"
   },
   "version": "0.0.2",
   "dependencies": {
@@ -27,7 +27,8 @@
     "blpapi": "*",
     "yelp": "*",
     "request": "*",
-    "node-freegeoip": "*"
+    "node-freegeoip": "*",
+    "node-wolfram": "*"
   },
   "engines": {
     "node": "0.10.30",

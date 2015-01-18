@@ -66,6 +66,8 @@ setTimeout(function() {
 		testCase('most famous twitter accounts');
 		testCase('what is AAPL trading at');
 		testCase('stock price AAPL');
+		testCase('5 plus 5');
+		testCase('6 * 8');
 
  	});
 }, 3000)
@@ -78,16 +80,16 @@ app.all('/api', function(req, res) {
 	var input = req.body.text || req.query.text;
 	getResults(input, function(data) {
 		res.json(data)
-	});
+	},req);
 })
 
-var getResults = function(input, callback) {
+var getResults = function(input, callback, req) {
 	var api_location = classifier.classify(input).split(" ")
 	var filename = api_location[0]
 	var method = api_location[1]
 	var api = require("./apis/" + filename)[method].call_api(input, function(data) {
 		callback(data)
-	})
+	},req)
 }
 
 app.get('/result', function(req, res) {
@@ -101,4 +103,8 @@ app.get('/result', function(req, res) {
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
+});
+
+classifier.events.on('trainedWithDocument', function (obj) {
+   console.log(obj);
 });

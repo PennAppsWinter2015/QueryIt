@@ -87,7 +87,7 @@ var getResults = function(input, callback, req) {
 
 app.get('/result', function(req, res) {
 	var input = req.query.text;
-	var url = "http://localhost:3000/api?text=" + input
+	var url = "http://texta.io/api?text=" + input
 	getResults(input, function(data) {
 		console.log("result", data)
 		res.render('api_results', {url: url, result: JSON.stringify(data)})

@@ -5,10 +5,10 @@ block content
     .row
       .col-md-12
           a(href=url)
-            h1=url
+            h3=url
           br
     .row
-      .col-md-6
+      #items.col-md-5
         div(role='tabpanel')
           ul.nav.nav-tabs(role='tablist')
             li.active(role='presentation')
@@ -25,20 +25,19 @@ block content
               a(href='#swift', aria-controls='php', role='tab', data-toggle='tab') Swift
           .tab-content
             #python.tab-pane(role='tabpanel')
-              h3 Python 2
               pre
                 code(class="language-python")
+                  | #Python 3
                   | import urllib2
                   | urllib2.urlopen("#{url}").read()
 
-              h3 Python 3
               pre
                 code(class="language-python")
+                  | #Python 2
                   | import urllib.request
                   | urllib.request.urlopen("#{url}").read()
 
             #node.tab-pane.active(role='tabpanel')
-              h3 Node.js 
               pre
                 code(class="language-javascript")
                   | var request = require('request');
@@ -48,7 +47,6 @@ block content
                   |  }
                   | })
             #ruby.tab-pane(role='tabpanel')
-              h3 Ruby
               pre
                 code(class="language-ruby")
                   | require 'net/http'
@@ -56,14 +54,12 @@ block content
                   | Net::HTTP.get(uri)
 
             #php.tab-pane(role='tabpanel')
-             h3 PHPcustom_scrollbar
               pre
                 code(class="language-php")
                   |$response = http_get("#{url}", array("timeout"=>1), $info);
                   |print_r($info);
                   
             #java.tab-pane(role='tabpanel') 
-             h3 Java
               pre
                 code(class="language-java")
                   |urlString = "#{url}";
@@ -71,7 +67,6 @@ block content
                   |URLConnection conn = url.openConnection();
                   |InputStream is = conn.getInputStream() 
             #swift.tab-pane(role='tabpanel') 
-             h3 Swift
               pre
                 code(class="language-swift")
                   | let url = NSURL(string: "#{url}")

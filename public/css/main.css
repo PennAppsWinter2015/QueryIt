@@ -79,12 +79,20 @@ body {
 	-moz-border-radius: 5px;
 	border-radius: 5px;
 	padding: 1%;
+	margin-left: 5%;
 	background-color: white	;
 }
 .navbar {
 	border-radius: 0px;
 }
+items div ul{
+}
+#items div ul{
+	margin-right: 11.87%;
+}
+#items div ul li {
 
+}
 .form-control {
 	opacity: 0.7;
 
@@ -92,7 +100,17 @@ body {
     animation: type 5s steps(50, end);*/
 
 }
+
+li.active a {
+	background-color: #93C54B;
+	border: #93C54B;
+	color: #3E3F3A;
+}
+
+a {
+	text-align: center;
+}
 .jsonview  {
 	font-size: 13px;
-	color: black
+	color: black;
 }

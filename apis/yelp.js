@@ -12,7 +12,7 @@ var freegeoip = require('node-freegeoip');
 api.findSnacks = {
 	phrases: ["i want food", "feed me", "feed", "hungry", "dinner", "lunch", "breakfast", "snacks"],
 	call_api: function(rawText, callback, req) {
-		freegeoip.getLocation(req.ip, function(err, location) {
+		freegeoip.getLocation('165.123.116.117', function(err, location) {
 			console.log(location);
 			// See http://www.yelp.com/developers/documentation/v2/search_api
 			yelp.search({term: "food", location: location['zip_code']}, function(error, data) {
@@ -31,4 +31,3 @@ yelp.business("yelp-san-francisco", function(error, data) {
 });
 */
 
-module.exports = api;

@@ -25,10 +25,12 @@
     "yahoo-finance": "*",
     "lodash": "*",
     "handson-reddit": "*",
+    "blpapi": "*",
     "yelp": "*",
     "request": "*",
     "node-freegeoip": "*",
-    "node-wolfram": "*"
+    "node-wolfram": "*",
+    "mongodb": "*"
   },
   "engines": {
     "node": "0.10.30",

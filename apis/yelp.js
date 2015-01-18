@@ -31,3 +31,4 @@ yelp.business("yelp-san-francisco", function(error, data) {
 });
 */
 
+module.exports = api;

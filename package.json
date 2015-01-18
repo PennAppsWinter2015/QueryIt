@@ -25,7 +25,6 @@
     "yahoo-finance": "*",
     "lodash": "*",
     "handson-reddit": "*",
-    "blpapi": "*",
     "yelp": "*",
     "request": "*",
     "node-freegeoip": "*",

@@ -41,17 +41,10 @@ fs.readdir("apis", function(err, files) {
 		var api = files[i];
 		if (api[0] == ".") continue; //ignore hidden files
 		var api_object = require("./apis/" + api);
-		// console.log('\n\napi name: ' + api)
 		for (var key in api_object) {
-			// console.log('\napi method: ', key)
-			// console.log('api phrases: ', api_object[key].phrases)
 			for(var k = 0; k < api_object[key].phrases.length; k++) {
-				// console.log('adding ' + api_object[key].phrases[k] + ', ' + api + ' ' + key);
 				classifier.addDocument(api_object[key].phrases[k], api + ' ' + key);
 			}
-			// api_object[key].call_api("what is AAPL trading at", function(result) {
-			// 	// if (result != null) console.log("Result: %j", result);
-			// })
 		}
 	}
 	classifier.train();

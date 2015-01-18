@@ -6,7 +6,8 @@ block content
       .row
         form(action='/result').col-lg-6.col-lg-offset-3
           .input-group(style='box-shadow:0 0 30px rgba(0, 0, 0, 0.6)')
-            input.form-control(type='text', name='text', placeholder='Search for...')
+            input.form-control(type='text', name='text', placeholder='Search for...', style='font-size: 1.8em;')
             |       
             span.input-group-btn
-              button.btn.btn-success(type='submit', style='font-color:#3e3f3a')  Go!
+              button.btn.btn-success(type='submit', style='font-color:#3e3f3a')
+                span.glyphicon.glyphicon-search(aria-hidden="true")

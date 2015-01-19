@@ -14,11 +14,12 @@ keys.SPOTIFY_SECRET = '';
  * you can add as many api keys as you want, as
  * long as they're kept in order.  The keys will
  * be used at random to avoid the limits.
+ * You only have to add one for it to work.
  */
-keys.TWITTER_ACCESS_TOKEN = ['','',''];
-keys.TWITTER_ACCESS_TOKEN_SECRET = ['','', ''];
-keys.TWITTER_CONSUMER_KEY = ['','',''];
-keys.TWITTER_CONSUMER_SECRET = ['','',''];
+keys.TWITTER_ACCESS_TOKEN = [''];
+keys.TWITTER_ACCESS_TOKEN_SECRET = [''];
+keys.TWITTER_CONSUMER_KEY = [''];
+keys.TWITTER_CONSUMER_SECRET = [''];
 keys.USATODAY_ARTICLES_KEY = '';
 keys.USATODAY_BREAKING_NEWS_KEY = '';
 keys.WEATHER_KEY = '';

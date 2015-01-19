@@ -1,0 +1,21 @@
+//leave this line alone
+var api = {}
+
+//Optionally load keys.js if your API needs keys
+var keys = require('../keys.js');
+
+/**
+ * Create as many functions as you like here.  raw_text will be exactly
+ * what the query was and callback is the function you should call, with
+ * the parameter being the json you want to pass to the user.
+ */
+api.getSomething = {
+  phrases: ['keyword', 'another keyword', 'even more keywords!'],
+  call_api: function(raw_text, callback) {
+    var result = getStuffFromApi(raw_text);
+    callback(result);
+  }
+}
+
+//leave this alone if you want your file to be loaded
+module.exports = api;

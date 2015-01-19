@@ -1,8 +1,11 @@
 {
-  "name": "APIConglomerate",
+  "name": "QueryIt",
+  "description": "Simplify your api calls with a single endpoint to rule them all.",
+  "license": "GPL-3.0",
+  "homepage": "https://github.com/PennAppsWinter2015/QueryIt",
   "repository" : {
     "type" : "git",
-    "url" : "https://github.com/PennAppsWinter2015/Quaerit.git"
+    "url" : "https://github.com/PennAppsWinter2015/QueryIt.git"
   },
   "version": "0.0.2",
   "dependencies": {
@@ -30,7 +33,8 @@
     "request": "*",
     "node-freegeoip": "*",
     "node-wolfram": "*",
-    "mongodb": "*"
+    "mongodb": "*",
+    "prototypes": "*"
   },
   "engines": {
     "node": "0.10.30",

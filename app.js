@@ -44,7 +44,7 @@ fs.readdir("apis", function(err, files) {
 	// files = ['yahoofinance.js'];
 	for (var i =0; i<files.length; i++) {
 		var api = files[i];
-		if (api[0] == "." || api.endsWith('.js')) continue; //ignore hidden files and non-javascript files
+		if (api[0] == "." || !api.endsWith('.js')) continue; //ignore hidden files and non-javascript files
 		var api_object = require("./apis/" + api);
 		for (var key in api_object) {
 			for(var k = 0; k < api_object[key].phrases.length; k++) {

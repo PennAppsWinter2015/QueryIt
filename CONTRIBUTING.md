@@ -1,0 +1,4 @@
+#Contributing
+Adding a new API is very simple, just fork this repo and create your module in /apis/
+
+If you need to add any dependencies, please put them into package.json.  Everything must work when the user runs npm install and adds their API keys.  If your addition needs access to an api key, follow the format in api.js.sample and add an entry to keys.js.sample in alphabetical order.  Try not to go overboard on the NLP phrases.  Use words that are as specific as possible to your api.  Don't use words that will conflict with another api.  Run test cases (in app.js) to make sure your additions aren't conflicting with anything else.  Leave your test case in when you commit to make it easy for others to spot a conflict with your api.

@@ -1,0 +1,33 @@
+/**
+ * Add your api keys here.  Not all are required,
+ * but if you leave one out bad stuff will happen.
+ * Unload any modules that you don't have api keys
+ * for to avoid this!
+ */
+keys = {};
+
+keys.GOOGLE_GEO = '';
+keys.SPOTIFY_ID = '';
+keys.SPOTIFY_SECRET = '';
+/**
+ * Since twitter has really strict rate limits,
+ * you can add as many api keys as you want, as
+ * long as they're kept in order.  The keys will
+ * be used at random to avoid the limits.
+ * You only have to add one for it to work.
+ */
+keys.TWITTER_ACCESS_TOKEN = [''];
+keys.TWITTER_ACCESS_TOKEN_SECRET = [''];
+keys.TWITTER_CONSUMER_KEY = [''];
+keys.TWITTER_CONSUMER_SECRET = [''];
+keys.USATODAY_ARTICLES_KEY = '';
+keys.USATODAY_BREAKING_NEWS_KEY = '';
+keys.WEATHER_KEY = '';
+keys.WOLFRAM_ALPHA_KEY = '';
+keys.YELP_CONSUMER_KEY = '';
+keys.YELP_CONSUMER_SECRET = '';
+keys.YELP_TOKEN = '';
+keys.YELP_TOKEN_SECRET = '';
+keys.YOUTUBE_KEY = '';
+
+module.exports = keys;

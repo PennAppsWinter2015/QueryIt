@@ -24,6 +24,11 @@ app.use(methodOverride('_method'));
 app.use(require('stylus').middleware(__dirname + '/public'));
 app.use(express.static(path.join(__dirname, 'public')));
 
+require('prototypes');
+
+/**
+ * End module dependencies.
+ */
 
 if (app.get('env') == 'development') {
 	app.locals.pretty = true;
@@ -39,7 +44,7 @@ fs.readdir("apis", function(err, files) {
 	// files = ['yahoofinance.js'];
 	for (var i =0; i<files.length; i++) {
 		var api = files[i];
-		if (api[0] == ".") continue; //ignore hidden files
+		if (api[0] == "." || !api.endsWith('.js')) continue; //ignore hidden files and non-javascript files
 		var api_object = require("./apis/" + api);
 		for (var key in api_object) {
 			for(var k = 0; k < api_object[key].phrases.length; k++) {
